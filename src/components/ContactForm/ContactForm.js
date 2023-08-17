@@ -20,7 +20,7 @@ export const ContactForm = () => {
     }
 
     if (contacts.some(({ phone }) => phone === formNumber.toLowerCase().trim() || phone.trim() === formNumber.trim())) {
-      return alert(`${formNumber} is already in contacts`);
+      return Notiflix.Notify.warning(`Alert, ${formNumber} is already in contacts`);
     }
 
     dispatch(addContact({ name: formName, phone: formNumber }));
