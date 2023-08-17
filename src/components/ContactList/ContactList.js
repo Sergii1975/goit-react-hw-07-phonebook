@@ -1,6 +1,9 @@
 import { useSelector } from 'react-redux';
 import { selectContactsFilter, selectContactsList } from 'redux/selectors';
 import { ContactsListItem } from '../ContactListItem/ContactList.Item';
+
+// import { createSelector } from "@reduxjs/toolkit";
+
 import { ContactsList } from './ContactList.styled';
 
 export const ContactList = () => {
@@ -9,6 +12,14 @@ export const ContactList = () => {
   const visibleContacts = [
     ...contacts.filter(contact => contact.name.toLowerCase().includes(filter)),
   ];
+
+//   export const selectVisibleContacts = createSelector(
+// [ selectContacts, selectFilter],
+//  (contacts, filter) => {
+//    return contacts.filter(contact => contact.name.toLowerCase()
+//     .includes(filter.toLowerCase()))
+//  }
+// )
 
   console.log(visibleContacts);
 
