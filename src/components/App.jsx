@@ -6,6 +6,7 @@ import { Section } from './Section/Section';
 import { ContactForm } from './ContactForm/ContactForm';
 import { Filter } from './Filter/Filter';
 import { ContactList } from './ContactList/ContactList';
+import Loader from './Loader/Loader';
 
 export const App = () => {
   const dispatch = useDispatch();
@@ -25,6 +26,7 @@ export const App = () => {
       <Section title="Contacts">
         <Filter />
         {isLoading && !error && <b>Request in progress</b>}
+        {isLoading && <Loader/>}
         <ContactList />
       </Section>
     </>
