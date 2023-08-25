@@ -19,7 +19,7 @@ export const ContactForm = () => {
       return Notiflix.Notify.warning(`Alert, ${formName} is already in contacts`);
     }
 
-    if (contacts.some(({ phone }) => phone === formNumber.toLowerCase().trim() || phone.trim() === formNumber.trim())) {
+    if (contacts.some(({ phone }) => phone === formNumber.trim())) {
       return Notiflix.Notify.warning(`Alert, ${formNumber} is already in contacts`);
     }
 
